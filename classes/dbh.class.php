@@ -21,8 +21,7 @@ Class dbh {
         $dsn = 'mysql:host=' .$this->servername.';dbname=' . $this->dbname.";charset=".$this->charset;
         $pdo = new PDO($dsn, $this->username, $this->password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        var_dump($pdo);
+        
         return $pdo;
     } catch (PDOException $e) {
         echo "Connection failed: " .$e->getMessage();

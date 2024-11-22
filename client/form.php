@@ -1,14 +1,19 @@
+<?php
+include "../template/header.php";
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form</title>
 </head>
 <body class="container">
 
-<form action="" method="POST">
+<form action="../classes/signup.inc.php" method="POST">
     <div class="form-group">
         <label for="civilite">Civilité :</label>
         <select id="civilite" name="civilite" class="form-control" required>
@@ -37,7 +42,7 @@
         <input type="email" id="email" name="email" class="form-control" maxlength="50" required>
     </div>
 
-    <!-- 
+     
     <div class="form-group">
         <label for="role">Rôle :</label>
         <select id="role" name="role" class="form-control">
@@ -45,7 +50,7 @@
             <option value="ADMIN">Admin</option>
         </select>
     </div>
-    -->
+    
 
     <div class="form-group">
         <label for="tel">Téléphone :</label>
@@ -57,7 +62,7 @@
         <input type="password" id="mdp" name="mdp" class="form-control" required>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
+    <button type="submit" name="submit" class="btn btn-primary mt-2">Enregistrer</button>
 </form>
 
 <div class="my-5">VEHICULE</div>
