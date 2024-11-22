@@ -9,20 +9,19 @@
 <body>
 
     <header class="bg-secondary p-4 mb-3">
-        <?php /*if( isset($_SESSION['user']) ):*/ ?>
-            <?php /*if( unserialize($_SESSION['user'])->getRole() == "GERANT" ):*/ ?>
+        <?php if( isset($_SESSION['login']) ): ?>
+            <?php if( unserialize($_SESSION['login'])->getRole() == "CLIENT" ): ?>
                 <!-- GERANT -->
-            <?php /* endif;*/ ?>
+                <a href="#" class="btn btn-success">UHH UMM BAZGINGa</a>
+                <?php endif; ?>
             <!-- CLIENT -->
-            <a href="signup.php" class="btn btn-success">Signup</a>
-            <a href="login.php" class="btn btn-success">Login</a>
+
 
             <a href="?action=logout" class="btn btn-danger">Logout</a>
-        <?php /*endif;*/?>
+        <?php endif;?>
 
-
+            <a href="signup.php" class="btn btn-success">Signup</a>
+            <a href="login.php" class="btn btn-success">Login</a>
     </header>
 
     <main class="container-fluid">
-
-    
