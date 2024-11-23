@@ -15,5 +15,5 @@ if (isset($_POST["submit"])) {
 
   $login->loginUser();
 
-  header("location: ../form.php?=logincheckok");
+  header("location: ../client/form.php?=logincheckok");
 }

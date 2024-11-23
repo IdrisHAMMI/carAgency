@@ -16,7 +16,7 @@ class Login extends dbh {
             exit();
         }
   
-        if (!password_verify($password, $user['userPass'])) {
+        if (!password_verify($password, $user['mdp'])) {
             //INVALID PASSWORD
             header("location: ../client/login.php?error=wrongpassword");
             exit();
@@ -27,6 +27,7 @@ class Login extends dbh {
         session_start();
         $_SESSION["id_personne"] = $user["id_personne"];
         $_SESSION["prenom"] = $user["prenom"];
+        $_SESSION["login"] = $user["login"];
         $_SESSION["email"] = $user["email"];
         $_SESSION["role"] = $user["role"];
      }
