@@ -14,15 +14,25 @@ session_start();
 
 <header class="bg-secondary p-4 mb-3">
     <?php if (isset($_SESSION['login'])): ?>
-        <h4>Welcome <?= htmlspecialchars($_SESSION['login']); ?></h4>
-        <a href="../admin/userTable.php" class="btn btn-success">User Management</a>
-        <a href="#" class="btn btn-success">Car Management</a>
-        <a href="#" class="btn btn-success">Booking Management</a>
-        <a href="?action=logout" class="btn btn-danger">Logout</a>
+        
+        <?php if (isset($_SESSION['login']) && $_SESSION['role'] == "GERANT"): ?>        
+            <h4>Welcome <?= htmlspecialchars($_SESSION['login']); ?></h4>
+            <a href="../admin/userTable.php" class="btn btn-success">User Management</a>
+            <a href="../admin/carTable.php" class="btn btn-success">Car Management</a>
+            <a href="../admin/bookingTable.php" class="btn btn-success">Booking Management</a>
+            <a href="../client/form.php" class="btn btn-success">Form</a>
+            <a href="../classes/logout.inc.php" class="btn btn-danger">Logout</a>
+            <?php endif ?>
+
+        <?php if (isset($_SESSION['login']) && $_SESSION['role'] == "CLIENT"): ?>
+            <h4>Welcome <?= htmlspecialchars($_SESSION['login']); ?></h4>
+            <a href="../client/form.php" class="btn btn-success">Form</a>
+            <a href="../classes/logout.inc.php" class="btn btn-danger">Logout</a>
+            <?php endif ?>
     <?php else: ?>
         <a href="login.php" class="btn btn-success">Login</a>
+        <a href="../client/form.php" class="btn btn-success">Form</a>
     <?php endif; ?>
 </header>
 
-
-    <main class="container-fluid">
+<main class="container-fluid">

@@ -1,5 +1,5 @@
 <?php
-include "../classes/user.class.php";
+include "../controller/user.control.php";
 include "../template/header.php";
 ?>
 

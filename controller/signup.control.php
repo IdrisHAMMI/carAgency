@@ -22,19 +22,19 @@ class SignupContr extends Signup {
     }
 
     public function signupUser() {
-        // Validate input
+        // VALIDATE INPUT
         if (!$this->validateInput()) {
             header("location: ../client/form.php?error=invalidinput");
             exit();
         }
 
-        // Check if login name is already taken
+        // CHECK IF LOGIN NAME IS TAKEN
         if ($this->checkUserExists($this->loginName)) {
             header("location: ../client/form.php?error=userexists");
             exit();
         }
 
-        // Try to insert user into database
+        // TRY/CATCH TO INSERT USER IN DB
         try {
             $this->setUser(
                 $this->civility,
@@ -56,7 +56,7 @@ class SignupContr extends Signup {
         }
     }
 
-    // Validate form input
+    // VALIDATE FORM INPUT
     private function validateInput() {
         if (empty($this->civility) || empty($this->firstName) || empty($this->lastName) || 
             empty($this->loginName) || empty($this->email) || empty($this->role) || 
@@ -69,17 +69,17 @@ class SignupContr extends Signup {
         }
 
         if (!preg_match("/^[a-zA-Z0-9]*$/", $this->loginName)) {
-            return false; // Invalid characters in login name
+            return false; // INVALID CHARACTERS
         }
 
         if (strlen($this->password) < 6) {
-            return false; // Password too short
+            return false; // PASSWORD TOO SHORT
         }
 
         return true;
     }
 
-    // Check if the user already exists in the database
+    // CHECK IF USER IS ALREADY IN DB
     private function checkUserExists($loginName) {
         try {
             $stmt = $this->connect()->prepare("SELECT login FROM personne WHERE login = ?;");

@@ -66,7 +66,7 @@ include "../template/header.php";
 
 <div class="my-5">VEHICULE</div>
 
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="../classes/car.inc.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="marque">Marque :</label>
         <input type="text" id="marque" name="marque" class="form-control" maxlength="25" required>
@@ -105,7 +105,7 @@ include "../template/header.php";
         <input type="file" id="photo" name="photo" class="form-control" accept="image/*" required>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
+    <button type="submit" name="submit" class="btn btn-primary mt-2">Enregistrer</button>
 </form>
 
 <div class="my-5">COMMENTAIRE</div>

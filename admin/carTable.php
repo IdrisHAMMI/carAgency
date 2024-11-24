@@ -1,6 +1,6 @@
 <?php
-include "../classes/user.class.php";
-include "../template/header.php";
+include_once "../classes/car.inc.php";
+include_once "../template/header.php";
 ?>
 
 <!DOCTYPE html>
@@ -31,13 +31,13 @@ include "../template/header.php";
     <tr>
        <td><?= htmlspecialchars($car['id_vehicule']); ?></td>
        <td><?= htmlspecialchars($car['marque']); ?></td>
-       <td><?= htmlspecialchars($car['model']); ?></td>
+       <td><?= htmlspecialchars($car['modele']); ?></td>
        <td><?= htmlspecialchars($car['matricule']); ?></td>
        <td><?= htmlspecialchars($car['prix_journalier']); ?></td>
        <td><?= htmlspecialchars($car['type_vehicule']); ?></td>
-       <td><?= htmlspecialchars($car['status_dispo']); ?></td>
-       <td><?= htmlspecialchars($car['photo']); ?></td>
-                    </tr>
+       <td><?= htmlspecialchars($car['statut_dispo']); ?></td>
+       <td><img src="../img/<?= htmlspecialchars($car['photo']); ?>" alt="Car Image" width="100"></td>
+    </tr>
     <?php endforeach; ?>
 </table>
 </div>
