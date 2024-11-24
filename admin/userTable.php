@@ -37,7 +37,13 @@ include "../template/header.php";
        <td><?= htmlspecialchars($user['login']); ?></td>
        <td><?= htmlspecialchars($user['role']); ?></td>
        <td><?= htmlspecialchars($user['tel']); ?></td>
-                    </tr>
+       <td>
+         <a href="#" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
+       </td>
+       <td>
+         <a href="../classes/user.inc.php?id=<?php $user['id_personne']; ?>" name="delete_user" class="btn btn-danger"><i class="bi bi-trash red"></i></a>
+       </td>
+    </tr>
     <?php endforeach; ?>
 </table>
 </div>

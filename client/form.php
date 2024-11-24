@@ -63,6 +63,16 @@ include "../template/header.php";
 
     <button type="submit" name="submit" class="btn btn-primary mt-2">Enregistrer</button>
 </form>
+<?php
+    if(isset($_GET["error"])) {
+        switch($_GET["error"]) {
+            case"emptyinput":
+                echo"<p>Please fill all of the fields.</p>";
+                break;
+
+        }
+    }
+?>
 
 <div class="my-5">VEHICULE</div>
 
@@ -162,5 +172,6 @@ include "../template/header.php";
     -->
     <button type="submit" class="btn btn-primary mt-2">Enregistrer Réservation</button>
 </form>
+
 </body>
 </html>

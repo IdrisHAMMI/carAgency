@@ -27,5 +27,19 @@ include "../template/header.php";
 
     <button type="submit" name="submit" class="btn btn-primary mt-2">Se Connecter</button>
 </form>
+<?php
+    if(isset($_GET["error"])) {
+        switch($_GET["error"]) {
+            case"emptyinput":
+                echo"<p>Please fill all of the fields.</p>";
+                break;
+            case"usernotfound":
+                echo "<p>This user does not exist.</p>";
+                break;
+            case"wrongpassword":
+                echo "<p>Wrong Credencials.</p>";
+        }
+    }
+?>
 </body>
 </html>
