@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +14,12 @@ session_start();
 
 <header class="bg-secondary p-4 mb-3">
     <?php if (isset($_SESSION['login'])): ?>
-        <h4>Welcome <?= htmlspecialchars($_SESSION['email']); ?></h4>
-        <a href="#" class="btn btn-success">UHH UMM BAZGINGa</a>
+        <h4>Welcome <?= htmlspecialchars($_SESSION['login']); ?></h4>
+        <a href="../admin/userTable.php" class="btn btn-success">User Management</a>
+        <a href="#" class="btn btn-success">Car Management</a>
+        <a href="#" class="btn btn-success">Booking Management</a>
         <a href="?action=logout" class="btn btn-danger">Logout</a>
     <?php else: ?>
-        <a href="signup.php" class="btn btn-success">Signup</a>
         <a href="login.php" class="btn btn-success">Login</a>
     <?php endif; ?>
 </header>
